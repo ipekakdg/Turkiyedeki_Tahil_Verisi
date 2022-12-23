@@ -41,6 +41,7 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button12 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +68,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(464, 74);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(271, 360);
+            this.dataGridView1.Size = new System.Drawing.Size(387, 360);
             this.dataGridView1.TabIndex = 1;
             // 
             // button2
@@ -190,7 +191,7 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button10.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button10.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.button10.Location = new System.Drawing.Point(82, 377);
+            this.button10.Location = new System.Drawing.Point(12, 377);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(125, 57);
             this.button10.TabIndex = 10;
@@ -204,7 +205,7 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button11.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button11.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.button11.Location = new System.Drawing.Point(248, 377);
+            this.button11.Location = new System.Drawing.Point(157, 377);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(125, 57);
             this.button11.TabIndex = 11;
@@ -224,13 +225,29 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "TÜRKİYEDE TAHIL";
             // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button12.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button12.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.button12.Location = new System.Drawing.Point(304, 377);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(125, 57);
+            this.button12.TabIndex = 13;
+            this.button12.Text = "En Çok Tahıl Yetiştirilen İller";
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImage = global::Turkiyedeki_Tahil_Verisi.Properties.Resources.tahilanasayfa;
-            this.ClientSize = new System.Drawing.Size(773, 484);
+            this.ClientSize = new System.Drawing.Size(865, 484);
+            this.Controls.Add(this.button12);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
@@ -244,8 +261,9 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Türkiyede Tahıl Uygulaması";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -268,6 +286,7 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button12;
     }
 }
 

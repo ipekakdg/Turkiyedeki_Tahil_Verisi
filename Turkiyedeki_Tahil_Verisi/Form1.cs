@@ -152,7 +152,17 @@ namespace Turkiyedeki_Tahil_Verisi
             dataGridView1.DataSource = tablo;
             baglanti.Close();
         }
+        void encoktahilyetistirilenyer()
+        {
+            SqlConnection baglanti = new SqlConnection("Data Source=DESKTOP-1RI3SA7\\SQLEXPRESS;Initial Catalog=Turkiyede_Tahil;Integrated Security=True");
 
+            baglanti.Open();
+            da = new SqlDataAdapter("SELECT tahil_no AS TahilId,sehir_adi AS SehirAdi,sehir_uretim_miktari_yuzdeligi as UretimMiktari FROM EnÇokUretilenYer Where sehir_uretim_miktari_yuzdeligi IN (SELECT MAX(sehir_uretim_miktari_yuzdeligi) FROM EnÇokUretilenYer GROUP BY tahil_no) ORDER BY tahil_no", baglanti);
+            DataTable tablo = new DataTable();
+            da.Fill(tablo);
+            dataGridView1.DataSource = tablo;
+            baglanti.Close();
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -212,6 +222,11 @@ namespace Turkiyedeki_Tahil_Verisi
         private void button11_Click(object sender, EventArgs e)
         {
             ulke();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            encoktahilyetistirilenyer();
         }
     }
 }
