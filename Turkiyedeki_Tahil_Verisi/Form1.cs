@@ -23,7 +23,6 @@ namespace Turkiyedeki_Tahil_Verisi
         void tahilVerileri()
         {
             SqlConnection baglanti = new SqlConnection("Data Source=DESKTOP-1RI3SA7\\SQLEXPRESS;Initial Catalog=Turkiyede_Tahil;Integrated Security=True");
-           
             baglanti.Open();
             da = new SqlDataAdapter("Select * From Tahillar", baglanti);
             DataTable tablo = new DataTable();
@@ -31,7 +30,7 @@ namespace Turkiyedeki_Tahil_Verisi
             dataGridView1.DataSource = tablo;
             baglanti.Close();
         }
-        void tuketimVerileri()
+        void tuketimVerileri() 
         {
             SqlConnection baglanti = new SqlConnection("Data Source=DESKTOP-1RI3SA7\\SQLEXPRESS;Initial Catalog=Turkiyede_Tahil;Integrated Security=True");
 
@@ -67,7 +66,6 @@ namespace Turkiyedeki_Tahil_Verisi
         void tahilkullanimalani()
         {
             SqlConnection baglanti = new SqlConnection("Data Source=DESKTOP-1RI3SA7\\SQLEXPRESS;Initial Catalog=Turkiyede_Tahil;Integrated Security=True");
-
             baglanti.Open();
             da = new SqlDataAdapter("Select * From TahilinKullanimYeri", baglanti);
             DataTable tablo = new DataTable();
@@ -75,21 +73,10 @@ namespace Turkiyedeki_Tahil_Verisi
             dataGridView1.DataSource = tablo;
             baglanti.Close();
         }
-        void encokuretilenyer()
-        {
-            SqlConnection baglanti = new SqlConnection("Data Source=DESKTOP-1RI3SA7\\SQLEXPRESS;Initial Catalog=Turkiyede_Tahil;Integrated Security=True");
-
-            baglanti.Open();
-            da = new SqlDataAdapter("Select * From EnÇokUretilenYer", baglanti);
-            DataTable tablo = new DataTable();
-            da.Fill(tablo);
-            dataGridView1.DataSource = tablo;
-            baglanti.Close();
-        }
+        
         void ithalat()
         {
             SqlConnection baglanti = new SqlConnection("Data Source=DESKTOP-1RI3SA7\\SQLEXPRESS;Initial Catalog=Turkiyede_Tahil;Integrated Security=True");
-
             baglanti.Open();
             da = new SqlDataAdapter("Select * From İthalat", baglanti);
             DataTable tablo = new DataTable();
@@ -157,7 +144,7 @@ namespace Turkiyedeki_Tahil_Verisi
             SqlConnection baglanti = new SqlConnection("Data Source=DESKTOP-1RI3SA7\\SQLEXPRESS;Initial Catalog=Turkiyede_Tahil;Integrated Security=True");
 
             baglanti.Open();
-            da = new SqlDataAdapter("SELECT tahil_no AS TahilId,sehir_adi AS SehirAdi,sehir_uretim_miktari_yuzdeligi as UretimMiktari FROM EnÇokUretilenYer Where sehir_uretim_miktari_yuzdeligi IN (SELECT MAX(sehir_uretim_miktari_yuzdeligi) FROM EnÇokUretilenYer GROUP BY tahil_no) ORDER BY tahil_no", baglanti);
+            da = new SqlDataAdapter("SELECT tahil_no AS TahilId,sehir_adi AS SehirAdi,sehir_uretim_miktari_yuzdeligi as UretimMiktari FROM EnÇokUretilenYer Where sehir_uretim_miktari_yuzdeligi IN (SELECT MAX(sehir_uretim_miktari_yuzdeligi) FROM EnÇokUretilenYer GROUP BY tahil_no) ORDER BY tahil_no", baglanti);  //Gelişmiş Sorgu
             DataTable tablo = new DataTable();
             da.Fill(tablo);
             dataGridView1.DataSource = tablo;
